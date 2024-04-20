@@ -1,12 +1,16 @@
 package dto
 
-import "time"
+import (
+	"BreadTask2/graph/model"
+	"time"
+)
 
 type BreadCollection struct {
 	BreadDocuments map[string]BreadDocument
 }
 
 type BreadDocument struct {
-	Name      string    `firestore:"name"`
-	CreatedAt time.Time `firestore:"createdAt"`
+	BreadInfo model.BreadInfo `firestore:"breadInfo"`
+	CreatedAt time.Time       `firestore:"createdAt"`
+	UpdatedAT time.Time       `firestore:"updatedAt"`
 }

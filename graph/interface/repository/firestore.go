@@ -30,8 +30,8 @@ func (f *FirestoreImpl) GetAllBreads() ([]*model.Bread, error) {
 		bread := &model.Bread{
 			ID: id,
 			BreadInfo: &model.BreadInfo{
-				Name:      breadDocument.Name,
-				CreatedAt: breadDocument.CreatedAt,
+				Name:      breadDocument.BreadInfo.Name,
+				CreatedAt: breadDocument.BreadInfo.CreatedAt,
 			},
 		}
 		allBreadsList = append(allBreadsList, bread)
@@ -55,8 +55,8 @@ func (f *FirestoreImpl) GetBread(id string) (*model.Bread, error) {
 	bread := &model.Bread{
 		ID: id,
 		BreadInfo: &model.BreadInfo{
-			Name:      breadDocument.Name,
-			CreatedAt: breadDocument.CreatedAt,
+			Name:      breadDocument.BreadInfo.Name,
+			CreatedAt: breadDocument.BreadInfo.CreatedAt,
 		},
 	}
 	return bread, nil
